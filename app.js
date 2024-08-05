@@ -14,6 +14,11 @@ app.get('/', (request, response) => {
     response.send('Olá Mercado pago')
 })
 
+app.post('/notificacao', (request, response) => {
+  console.log('Request: ' + request);
+  response.status(200);
+})
+
 app.get('/teste', (request, response) => {
     console.log("Tentando rota")
     response.send('Tentando rota')
