@@ -4,9 +4,7 @@
   "description": "Integração com mercado pafo",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "vercel-build": "npx prisma migrate deploy"
+    "start": "node app.js"
   },
   "author": "Leandro Almeida",
   "license": "MIT",
