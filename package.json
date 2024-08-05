@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "start": "node app.js"
+    "start": "node app.js",
+    "vercel-build": "npx prisma migrate deploy"
   },
   "author": "Leandro Almeida",
   "license": "MIT",
