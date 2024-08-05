@@ -15,7 +15,7 @@ app.get('/', (request, response) => {
 })
 
 app.post('/notificacao', (request, response) => {
-  console.log('Request: ' + request);
+  console.log(request.query);
   response.status(200);
 })
 
