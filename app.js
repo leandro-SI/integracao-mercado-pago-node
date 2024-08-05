@@ -15,8 +15,27 @@ app.get('/', (request, response) => {
 })
 
 app.post('/notificacao', (request, response) => {
-  console.log(request.query);
-  response.send("OK");
+    console.log(request.query);
+
+    var id = request.query.id;
+
+    setTimeout(() => {
+
+        var filtro = {
+            "order.id": id
+        }
+
+        MercadoPagoPayment.search({
+            qs: filtro
+        }).then(data => {
+            console.log(data);
+        }).catch(err => {
+            console.log(err);
+        })
+        
+    }, 20000);
+
+    response.send("OK");
 })
 
 app.get('/teste', (request, response) => {
