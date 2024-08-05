@@ -14,6 +14,10 @@ app.get('/', (request, response) => {
     response.send('Olá Mercado pago')
 })
 
+app.get('/teste', (request, response) => {
+    response.send('Tentando rota')
+})
+
 app.get('/pagar', async (request, response) => {
 
     // armazenar no banco:
