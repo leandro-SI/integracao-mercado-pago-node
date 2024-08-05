@@ -10,6 +10,7 @@ const MercadoPagoClient = new mp.MercadoPagoConfig({
 const MercadoPagoPayment = new mp.Payment(MercadoPagoClient);
 const MercadoPagoPreferences = new mp.Preference(MercadoPagoClient);
 
+
 app.get('/', (request, response) => {
     response.send('Olá Mercado pago')
 })
@@ -20,7 +21,7 @@ app.post('/notificacao', (request, response) => {
     var id = request.query.id;
 
     setTimeout(() => {
-
+        console.log('Começou rodar...')
         var filtro = {
             "order.id": id
         }
