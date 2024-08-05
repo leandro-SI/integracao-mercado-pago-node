@@ -15,6 +15,7 @@ app.get('/', (request, response) => {
 })
 
 app.get('/teste', (request, response) => {
+    console.log("Tentando rota")
     response.send('Tentando rota')
 })
 
