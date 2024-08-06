@@ -26,8 +26,8 @@ app.post('/notificacao', (request, response) => {
             "order.id": id
         }
 
-        MercadoPagoPayment.search({
-            qs: filtro
+        MercadoPagoPayment.get({
+            id: id
         }).then(data => {
             console.log(data);
         }).catch(err => {
