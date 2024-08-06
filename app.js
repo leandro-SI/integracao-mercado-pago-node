@@ -9,6 +9,7 @@ const MercadoPagoClient = new mp.MercadoPagoConfig({
 
 const MercadoPagoPayment = new mp.Payment(MercadoPagoClient);
 const MercadoPagoPreferences = new mp.Preference(MercadoPagoClient);
+const MercadoPagoMerchantOrder = new mp.MerchantOrder(MercadoPagoClient);
 
 
 app.get('/', (request, response) => {
@@ -19,8 +20,8 @@ app.get('/pagamento/:id', (request, response) => {
 
     var id = request.params.id;
 
-    MercadoPagoPayment.get({
-        id: id
+    MercadoPagoMerchantOrder.get({
+        merchantOrderId: id
     }).then(data => {
         console.log(data);
         response.send(data);
@@ -41,8 +42,8 @@ app.post('/notificacao', (request, response) => {
             "order.id": id
         }
 
-        MercadoPagoPayment.get({
-            id: id
+        MercadoPagoMerchantOrder.get({
+            merchantOrderId: id
         }).then(data => {
             console.log(data);
         }).catch(err => {
