@@ -34,7 +34,7 @@ app.post('/notificacao', (request, response) => {
             console.log(err);
         })
         
-    }, 20000);
+    }, 10000);
 
     response.send("OK");
 })
