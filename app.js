@@ -15,6 +15,21 @@ app.get('/', (request, response) => {
     response.send('Olá Mercado pago')
 })
 
+app.get('/pagamento/:id', (request, response) => {
+
+    var id = request.params.id;
+
+    MercadoPagoPayment.get({
+        id: id
+    }).then(data => {
+        console.log(data);
+        response.send(data);
+    }).catch(err => {
+        response.send(err);
+        console.log(err);
+    })
+})
+
 app.post('/notificacao', (request, response) => {
     console.log(request.query);
 
